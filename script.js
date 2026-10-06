@@ -340,21 +340,42 @@ filterLinks.forEach((link) => {
   });
 });
 
+/* ================= CONTACT FORM (EmailJS) ================= */
+
+const EMAILJS_SERVICE_ID = "service_8j6a1a1";
+const EMAILJS_TEMPLATE_ID = "template_s3vb4ld";
+
 const sendBtn = document.getElementById("sendBtn");
 const cName = document.getElementById("cName");
 const cEmail = document.getElementById("cEmail");
 const cMessage = document.getElementById("cMessage");
 
+function flagField(field) {
+  field.style.borderColor = "rgba(255, 120, 120, 0.7)";
+  setTimeout(() => {
+    field.style.borderColor = "";
+  }, 900);
+}
+
 sendBtn.addEventListener("click", () => {
-  if (!cName.value.trim() || !cEmail.value.trim() || !cMessage.value.trim()) {
-    [cName, cEmail, cMessage].forEach((field) => {
-      if (!field.value.trim()) {
-        field.style.borderColor = "rgba(255, 120, 120, 0.7)";
-        setTimeout(() => {
-          field.style.borderColor = "";
-        }, 900);
-      }
-    });
+  const name = cName.value.trim();
+  const email = cEmail.value.trim();
+  const message = cMessage.value.trim();
+
+  // empty-field check
+  let hasError = false;
+  [cName, cEmail, cMessage].forEach((field) => {
+    if (!field.value.trim()) {
+      flagField(field);
+      hasError = true;
+    }
+  });
+  if (hasError) return;
+
+  // email format check
+  const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+  if (!emailPattern.test(email)) {
+    flagField(cEmail);
     return;
   }
 
@@ -364,17 +385,17 @@ sendBtn.addEventListener("click", () => {
   sendBtn.disabled = true;
   btnText.textContent = "Sending...";
 
-  // variable names bilkul template ke {{...}} se match hone chahiye
+  // names must match the {{...}} variables in the EmailJS template
   const templateParams = {
-    name: cName.value.trim(),
-    email: cEmail.value.trim(),
-    message: cMessage.value.trim(),
-    title: "New Contact Form Message",
-    time: new Date().toLocaleString(),
+    name: name,                              // {{name}}
+    email: email,                            // {{email}}
+    message: message,                        // {{message}}
+    title: "New Contact Form Message",       // {{title}}  (Subject: Contact Us: {{title}})
+    time: new Date().toLocaleString(),       // {{time}}
   };
 
   emailjs
-    .send("service_rmtx3sw", "template_dsgmbvu", templateParams)
+    .send(EMAILJS_SERVICE_ID, EMAILJS_TEMPLATE_ID, templateParams)
     .then(() => {
       sendBtn.classList.add("sent");
       btnText.textContent = "Message Sent";
