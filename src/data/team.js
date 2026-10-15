@@ -1,9 +1,12 @@
+import kabeer from "../assets/team_imgs/kabeer khan.jpg";
+import ameer from "../assets/team_imgs/Ameer uddin.jpeg";
+
 export const TEAM = [
   {
     id: "kabeer",
     name: "Muhammad Kabeer Khan",
     role: "Founder & CEO",
-    img: "src/assets/team_imgs/kabeer khan.jpg", 
+    img: kabeer,
     links: {
       instagram: "https://www.instagram.com/itx_kabeer_kk/#",
       facebook: "https://www.facebook.com/people/Kabeer-Khan/pfbid0fTADXd7oXJxXLpJCXxnzSd3nhcoBEnjyvxao6kY6FhxJwhNsTjcbJ6yenjkhD2Ael/",
@@ -15,7 +18,7 @@ export const TEAM = [
     id: "ameer",
     name: "Syed Ameer Uddin",
     role: "Co-Founder / Product Manager",
-    img: "src/assets/team_imgs/Ameer uddin.jpeg", 
+    img: ameer, 
     links: {
       instagram: "https://instagram.com/your-username",
       facebook: "https://facebook.com/your-username",
