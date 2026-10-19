@@ -5,6 +5,7 @@ import barber from "../assets/project_imgs/costome web 2.png";
 import restaurant from "../assets/project_imgs/costome web 3.png";
 import cafe from "../assets/project_imgs/wordpress2.png";
 import bodybuilding from "../assets/project_imgs/wordpress1.png";
+import travel from "../assets/project_imgs/travel_web.jpg";
 
 const ph = (seed) => `https://picsum.photos/seed/${seed}/900/560`;
 
@@ -48,6 +49,13 @@ export const CATEGORIES = [
         type: "Business Website",
         img: restaurant,
         link: "https://fusion-custom-web-project.vercel.app/",
+      },
+      {
+        id: "restaurant-website",
+        title: "Resturent Website",
+        type: "Business Website",
+        img: travel,
+        link: "https://fusion-travel-agancy.vercel.app/",
       },
     ],
   },
