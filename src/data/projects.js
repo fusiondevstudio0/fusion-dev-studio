@@ -52,7 +52,7 @@ export const CATEGORIES = [
       },
       {
         id: "restaurant-website",
-        title: "Resturent Website",
+        title: "Travel agancy",
         type: "Business Website",
         img: travel,
         link: "https://fusion-travel-agancy.vercel.app/",
