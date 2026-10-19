@@ -6,6 +6,7 @@ import restaurant from "../assets/project_imgs/costome web 3.png";
 import cafe from "../assets/project_imgs/wordpress2.png";
 import bodybuilding from "../assets/project_imgs/wordpress1.png";
 import travel from "../assets/project_imgs/travel_web.jpg";
+import drone from "../assets/project_imgs/drone_web.jpg";
 
 const ph = (seed) => `https://picsum.photos/seed/${seed}/900/560`;
 
@@ -24,10 +25,10 @@ export const CATEGORIES = [
       },
       {
         id: "furniture-shop",
-        title: "Furniture Shop",
-        type: "E-commerce Website",
-        img: furniture,
-        link: "https://fusion-furniture-web-project.vercel.app/",
+        title: "Drone Brend",
+        type: "Brend Website",
+        img: drone,
+        link: "https://dronenet-mu.vercel.app/",
       },
       {
         id: "dental-clinic",
@@ -56,6 +57,13 @@ export const CATEGORIES = [
         type: "Business Website",
         img: travel,
         link: "https://fusion-travel-agancy.vercel.app/",
+      },
+      {
+        id: "furniture-shop",
+        title: "Furniture Shop",
+        type: "E-commerce Website",
+        img: furniture,
+        link: "https://fusion-furniture-web-project.vercel.app/",
       },
     ],
   },
