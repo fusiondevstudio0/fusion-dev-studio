@@ -7,6 +7,8 @@ import cafe from "../assets/project_imgs/wordpress2.png";
 import bodybuilding from "../assets/project_imgs/wordpress1.png";
 import travel from "../assets/project_imgs/travel_web.jpg";
 import drone from "../assets/project_imgs/drone_web.jpg";
+import e_commerce from "../assets/project_imgs/feshiOne.jpg";
+
 
 const ph = (seed) => `https://picsum.photos/seed/${seed}/900/560`;
 
@@ -32,10 +34,10 @@ export const CATEGORIES = [
       },
       {
         id: "dental-clinic",
-        title: "Dental Clinic",
+        title: "E-commerce",
         type: "Business Website",
-        img: dental,
-        link: "https://fusiondental-ten.vercel.app/",
+        img: e_commerce,
+        link: "https://feshionia.vercel.app/",
       },
       {
         id: "karachi-barber",
@@ -64,6 +66,13 @@ export const CATEGORIES = [
         type: "E-commerce Website",
         img: furniture,
         link: "https://fusion-furniture-web-project.vercel.app/",
+      },
+      {
+        id: "dental-clinic",
+        title: "Dental Clinic",
+        type: "Business Website",
+        img: dental,
+        link: "https://fusiondental-ten.vercel.app/",
       },
     ],
   },
