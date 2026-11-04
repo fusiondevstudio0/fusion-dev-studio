@@ -2,7 +2,7 @@ import construction from "../assets/project_imgs/construction_img.jpg";
 import furniture from "../assets/project_imgs/custome web 4.png";
 import dental from "../assets/project_imgs/costome web 1.png";
 import barber from "../assets/project_imgs/costome web 2.png";
-import restaurant from "../assets/project_imgs/costome web 3.png";
+import restaurant from "../assets/project_imgs/costome web 3.jpg";
 import cafe from "../assets/project_imgs/wordpress2.png";
 import bodybuilding from "../assets/project_imgs/wordpress1.png";
 import travel from "../assets/project_imgs/travel_web.jpg";
@@ -34,11 +34,11 @@ export const CATEGORIES = [
         link: "https://shoewebproject.vercel.app/",
       },
       {
-        id: "dental-clinic",
-        title: "E-commerce",
-        type: "Business Website",
-        img: e_commerce,
-        link: "https://feshionia.vercel.app/",
+        id: "elite",
+        title: "Backry Shop",
+        type: "Custom Website",
+        img: backry,
+        link: "https://backry-web-project.vercel.app/",
       },
       {
         id: "karachi-barber",
@@ -52,7 +52,7 @@ export const CATEGORIES = [
         title: "Resturent Website",
         type: "Business Website",
         img: restaurant,
-        link: "https://fusion-custom-web-project.vercel.app/",
+        link: "https://my-resturent-mu.vercel.app/",
       },
       {
         id: "restaurant-website",
@@ -83,11 +83,11 @@ export const CATEGORIES = [
         link: "https://dronenet-mu.vercel.app/",
       },
       {
-        id: "elite",
-        title: "Backry Shop",
-        type: "Custom Website",
-        img: backry,
-        link: "https://backry-web-project.vercel.app/",
+        id: "dental-clinic",
+        title: "E-commerce",
+        type: "Business Website",
+        img: e_commerce,
+        link: "https://feshionia.vercel.app/",
       },
     ],
   },
