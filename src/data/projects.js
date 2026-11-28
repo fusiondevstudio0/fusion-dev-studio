@@ -1,163 +1,102 @@
-import construction from "../assets/project_imgs/construction_img.jpg";
-import furniture from "../assets/project_imgs/custome web 4.png";
-import dental from "../assets/project_imgs/costome web 1.png";
-import barber from "../assets/project_imgs/costome web 2.png";
-import restaurant from "../assets/project_imgs/costome web 3.jpg";
-import cafe from "../assets/project_imgs/wordpress2.png";
-import bodybuilding from "../assets/project_imgs/wordpress1.png";
-import travel from "../assets/project_imgs/travel_web.jpg";
-import drone from "../assets/project_imgs/drone_web.jpg";
-import e_commerce from "../assets/project_imgs/feshiOne.jpg";
-import shoeweb from "../assets/project_imgs/shoes_web.jpg";
-import backry from "../assets/project_imgs/backry_shop.jpg";
-import car from "../assets/project_imgs/car.jpg"
-
-const ph = (seed) => `https://picsum.photos/seed/${seed}/900/560`;
+/* =====================================================================
+   APNE PROJECTS YAHAN ADD KARO
+   ---------------------------------------------------------------------
+   1. Project ki image ko  public/projects/  folder me rakho
+      (agar folder nahi hai to `public` ke andar `projects` naam ka folder banao)
+   2. Neeche us category ki list me ek naya { ... } block copy-paste karo:
+        title       -> project ka naam
+        description -> 1-2 lines
+        tags        -> technologies / tools
+        image       -> "/projects/file-name.jpg"
+        link        -> live project ka URL ('' chhor do to card clickable nahi hoga)
+   Categories ke ids: custom | wordpress | 3d
+   ===================================================================== */
 
 export const CATEGORIES = [
   {
-    id: "websites",
-    title: "Custom Websites",
-    tagline: "Fast, responsive websites built from scratch.",
-    projects: [
-      {
-        id: "elite",
-        title: "Construction Business",
-        type: "Custom Website",
-        img: car,
-        link: "https://car-brand-project-five.vercel.app/",
-      },
-      {
-        id: "furniture-shop",
-        title: "Shoes Brand",
-        type: "Brend Website",
-        img: shoeweb,
-        link: "https://shoewebproject.vercel.app/",
-      },
-      {
-        id: "elite",
-        title: "Construction Business",
-        type: "Custom Website",
-        img: construction,
-        link: "https://fusionconstruction.vercel.app/index.html",
-      },
-      {
-        id: "elite",
-        title: "Backry Shop",
-        type: "Custom Website",
-        img: backry,
-        link: "https://backry-web-project.vercel.app/",
-      },
-      {
-        id: "karachi-barber",
-        title: "Karachi Barber",
-        type: "Business Website",
-        img: barber,
-        link: "https://kabeer1khan.github.io/project-1/",
-      },
-      {
-        id: "restaurant-website",
-        title: "Resturent Website",
-        type: "Business Website",
-        img: restaurant,
-        link: "https://my-resturent-mu.vercel.app/",
-      },
-      {
-        id: "restaurant-website",
-        title: "Travel agancy",
-        type: "Business Website",
-        img: travel,
-        link: "https://fusion-travel-agancy.vercel.app/",
-      },
-      {
-        id: "furniture-shop",
-        title: "Furniture Shop",
-        type: "E-commerce Website",
-        img: furniture,
-        link: "https://fusion-furniture-web-project.vercel.app/",
-      },
-      {
-        id: "dental-clinic",
-        title: "Dental Clinic",
-        type: "Business Website",
-        img: dental,
-        link: "https://fusiondental-ten.vercel.app/",
-      },
-      {
-        id: "furniture-shop",
-        title: "Drone Brend",
-        type: "Brend Website",
-        img: drone,
-        link: "https://dronenet-mu.vercel.app/",
-      },
-      {
-        id: "dental-clinic",
-        title: "E-commerce",
-        type: "Business Website",
-        img: e_commerce,
-        link: "https://feshionia.vercel.app/",
-      },
-    ],
+    id: 'custom',
+    number: '01',
+    title: 'Custom Web Development',
+    tags: 'Frontend · Backend · Full-Stack',
+    description: 'Fast, scalable websites and web apps built from scratch.',
   },
   {
-    id: "wordpress",
-    title: "WordPress Development",
-    tagline: "Custom themes, plugins and powerful WordPress websites.",
-    projects: [
-      {
-        id: "zaiqa-mahal",
-        title: "Cafe",
-        type: "Bakery Website",
-        img: cafe,
-        link: "https://effervescent-cranachan-43ce32.netlify.app/",
-      },
-      {
-        id: "clinic-care",
-        title: "Body Building",
-        type: "Healthcare Website",
-        img: bodybuilding,
-        link: "https://bright-malasada-8e4ffb.netlify.app/",
-      },
-      {
-        id: "edu-hub",
-        title: "Edu Hub",
-        type: "Education Website",
-        img: ph("fusion-eduhub"),
-        link: "https://example.com",
-      },
-    ],
+    id: 'wordpress',
+    number: '02',
+    title: 'WordPress Development',
+    tags: 'Themes · Plugins · WooCommerce',
+    description: 'Custom WordPress sites and stores that are easy to manage.',
   },
   {
-    id: "3d",
-    title: "3D Models",
-    tagline: "High-quality 3D models for games, products and branding.",
-    projects: [
-      {
-        id: "cyber-helmet",
-        title: "Cyber Helmet",
-        type: "3D Model",
-        img: ph("fusion-helmet"),
-        link: "https://example.com",
-      },
-      {
-        id: "neon-car",
-        title: "Neon Car",
-        type: "3D Model",
-        img: ph("fusion-car"),
-        link: "https://example.com",
-      },
-      {
-        id: "robot-pet",
-        title: "Robot Pet",
-        type: "3D Character",
-        img: ph("fusion-robot"),
-        link: "https://example.com",
-      },
-    ],
+    id: '3d',
+    number: '03',
+    title: '3D Models in Blender',
+    tags: 'Products · Characters · Animation',
+    description: 'Realistic 3D models, renders and animations for brands.',
   },
-];
+]
 
-export const FEATURED_IDS = ["elite", "zaiqa-mahal", "furniture-shop"];
-
-const ALL = CATEGORIES.flatMap((c) => c.projects);
-export const FEATURED = FEATURED_IDS.map((id) => ALL.find((p) => p.id === id)).filter(Boolean);
+export const PROJECTS = {
+  custom: [
+    {
+      title: 'Mustang Car Website',
+      description: 'Car dealership website built with React, HTML and TAILWIND-CSS for a seamless user experience.',
+      tags: ['React', 'HTML', 'TAILWIND-CSS'],
+      image: 'src/assets/project_imgs/car.jpg',
+      link: 'https://car-brand-project-five.vercel.app/',
+    },
+    {
+      title: 'Feshin E-commerce Store',
+      description: 'E-commerce store built with React, HTML and Tailwind CSS, featuring a modern design and smooth user experience.',
+      tags: ['React', 'HTML', 'Tailwind-css'],
+      image: 'src/assets/project_imgs/feshiOne_under_30kb.webp',
+      link: 'https://feshionia.vercel.app/',
+    },
+    {
+      title: 'Shoe Store Website',
+      description: 'Shoe store website built with React, HTML and Tailwind CSS, featuring a modern design and smooth user experience.',
+      tags: ['React', 'HTML', 'Tailwind-css'],
+      image: 'src/assets/project_imgs/shoes_web_under_30kb.jpg',
+      link: 'https://shoewebproject.vercel.app/',
+    },
+    {
+      title: 'Resturant Website',
+      description: 'Resturant website built with React, HTML and Tailwind CSS, featuring a modern design and smooth user experience.',
+      tags: ['React', 'HTML', 'Tailwind-css'],
+      image: 'src/assets/project_imgs/selva_under_30kb.webp',
+      link: 'https://my-resturent-mu.vercel.app/',
+    },
+  ],
+  wordpress: [
+    {
+      title: 'Coffee Shop Website',
+      description: 'Coffee shop website built with WordPress and Elementor, featuring a modern design and smooth user experience.',
+      tags: ['WordPress', 'Elementor'],
+      image: 'src/assets/project_imgs/wordpress2.png',
+      link: 'https://effervescent-cranachan-43ce32.netlify.app/',
+    },
+    {
+      title: 'GYM Website',
+      description: 'GYM website built with WordPress and Elementor, featuring a modern design and smooth user experience.',
+      tags: ['WooCommerce', 'Custom Theme'],
+      image: 'src/assets/project_imgs/wordpress1.png',
+      link: 'https://bright-malasada-8e4ffb.netlify.app/',
+    },
+  ],
+  '3d': [
+    {
+      title: '3D Product Render',
+      description: 'Short description of what you modeled and where it is used.',
+      tags: ['Blender', 'Cycles'],
+      image: '/projects/3d-1.jpg',
+      link: 'https://example.com',
+    },
+    {
+      title: '3D Character',
+      description: 'Short description of what you modeled and where it is used.',
+      tags: ['Blender', 'Animation'],
+      image: '/projects/3d-2.jpg',
+      link: '',
+    },
+  ],
+}

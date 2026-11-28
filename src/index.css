@@ -1,120 +1,50 @@
-@import url("https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500&family=Oxanium:wght@200;300;400;500;600&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=Inter:wght@300;400;500&display=swap');
 @import "tailwindcss";
 
 @theme {
-  --font-display: "Oxanium", sans-serif;
-  --font-body: "Inter", sans-serif;
-  --color-neon: #1e90ff;
-  --color-ink: #020a16;
-
-  --animate-fade-up: fade-up 1s cubic-bezier(0.2, 0.7, 0.2, 1) both;
-  --animate-fade-down: fade-down 0.9s cubic-bezier(0.2, 0.7, 0.2, 1) both;
-  --animate-fade-left: fade-left 1s cubic-bezier(0.2, 0.7, 0.2, 1) both;
-  --animate-slide-up: slide-up 1s cubic-bezier(0.2, 0.7, 0.2, 1) both;
-  --animate-bg-in: bg-in 2.2s cubic-bezier(0.16, 0.8, 0.2, 1) both;
-  --animate-grow-x: grow-x 1s cubic-bezier(0.2, 0.7, 0.2, 1) both;
-  --animate-grow-y: grow-y 1.2s cubic-bezier(0.2, 0.7, 0.2, 1) both;
-  --animate-shimmer: shimmer 5s linear infinite;
-  --animate-scroll-dot: scroll-dot 1.8s ease-in-out infinite;
-  --animate-scroll-line: scroll-line 2s ease-in-out infinite;
-  --animate-pulse-glow: pulse-glow 3s ease-in-out infinite;
-
-  @keyframes fade-up {
-    from { opacity: 0; transform: translateY(28px); }
-    to { opacity: 1; transform: none; }
-  }
-  @keyframes fade-down {
-    from { opacity: 0; transform: translateY(-24px); }
-    to { opacity: 1; transform: none; }
-  }
-  @keyframes fade-left {
-    from { opacity: 0; transform: translateX(30px); }
-    to { opacity: 1; transform: none; }
-  }
-  @keyframes slide-up {
-    from { transform: translateY(115%); }
-    to { transform: translateY(0); }
-  }
-  @keyframes bg-in {
-    from { opacity: 0; transform: scale(1.25); filter: blur(8px); }
-    to { opacity: 1; transform: scale(1); filter: blur(0); }
-  }
-  @keyframes grow-x {
-    from { transform: scaleX(0); }
-    to { transform: scaleX(1); }
-  }
-  @keyframes grow-y {
-    from { transform: scaleY(0); }
-    to { transform: scaleY(1); }
-  }
-  @keyframes shimmer {
-    to { background-position: 200% 0; }
-  }
-  @keyframes scroll-dot {
-    0% { opacity: 0; transform: translateY(0); }
-    30% { opacity: 1; }
-    100% { opacity: 0; transform: translateY(8px); }
-  }
-  @keyframes scroll-line {
-    0% { transform: translateY(-100%); }
-    100% { transform: translateY(100%); }
-  }
-  @keyframes pulse-glow {
-    0%, 100% { filter: drop-shadow(0 0 4px rgba(30, 144, 255, 0.5)); }
-    50% { filter: drop-shadow(0 0 14px rgba(30, 144, 255, 0.95)); }
-  }
+  --font-display: "Cormorant Garamond", "Times New Roman", serif;
+  --font-body: "Inter", system-ui, sans-serif;
+  --color-accent: #3b4bff;
 }
 
-html {
-  scroll-behavior: smooth;
-}
-
+html { background: #06070b; }
 body {
-  background: #020a16;
+  margin: 0;
+  background: #06070b;
+  color: #fff;
   font-family: var(--font-body);
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
 }
+#root { width: 100%; margin: 0; padding: 0; }
 
-@media (prefers-reduced-motion: reduce) {
-  *, *::before, *::after {
-    animation-duration: 0.01ms !important;
-    animation-delay: 0s !important;
-    animation-iteration-count: 1 !important;
-    transition-duration: 0.01ms !important;
-  }
+/* ---------- Entry animations ---------- */
+@keyframes rise     { from { transform: translateY(110%); } to { transform: translateY(0); } }
+@keyframes fadeDown { from { opacity: 0; transform: translateY(-14px); } to { opacity: 1; transform: none; } }
+@keyframes fadeUp   { from { opacity: 0; transform: translateY(14px); } to { opacity: 1; transform: none; } }
+@keyframes growY    { from { transform: scaleY(0); } to { transform: scaleY(1); } }
+@keyframes videoIn  { from { opacity: 0; transform: scale(1.14); filter: blur(10px); } to { opacity: 1; transform: scale(1); filter: blur(0); } }
+@keyframes scrollLine { 0% { transform: scaleY(0); transform-origin: top; } 50% { transform: scaleY(1); transform-origin: top; } 51% { transform-origin: bottom; } 100% { transform: scaleY(0); transform-origin: bottom; } }
+
+.a-rise     { animation: rise 1.2s cubic-bezier(.16,1,.3,1) both; }
+.a-down     { animation: fadeDown 1s cubic-bezier(.16,1,.3,1) both; }
+.a-up       { animation: fadeUp 1s cubic-bezier(.16,1,.3,1) both; }
+.a-grow     { animation: growY 1.6s cubic-bezier(.16,1,.3,1) both; transform-origin: top; }
+.a-video    { animation: videoIn 1.8s cubic-bezier(.16,1,.3,1) both; }
+.a-scroll   { animation: scrollLine 2.2s ease-in-out infinite; }
+
+/* ---------- Menu overlay links ---------- */
+.menu-link { position: relative; display: inline-block; }
+.menu-link::after {
+  content: ""; position: absolute; left: 0; bottom: -4px; height: 1px; width: 100%;
+  background: #fff; transform: scaleX(0); transform-origin: right;
+  transition: transform .5s cubic-bezier(.16,1,.3,1);
 }
+.menu-link:hover::after { transform: scaleX(1); transform-origin: left; }
 
-:root {
-  /* image height / width of the reference */
-  --hero-ratio: 0.392;
-  /* minimum height of the image stage on laptop (bigger = bigger character) */
-  --stage-min: 60svh;
-}
-
-.hero-section {
-  min-height: 100svh;
-}
-
-.hero-stage {
-  position: relative;
-  width: 100%;
-  min-height: 100svh;
-}
-
-@media (min-width: 1024px) {
-  .hero-section {
-    display: flex;
-    align-items: center;
-    min-height: max(100svh, 620px);
-  }
-
-  .hero-stage {
-    min-height: 0;
-    height: max(calc(100vw * var(--hero-ratio)), var(--stage-min));
-  }
-
-  /* soft top and bottom edges so the image melts into the page */
-  .hero-img-mask {
-    -webkit-mask-image: linear-gradient(to bottom, transparent 0%, #000 9%, #000 80%, transparent 100%);
-    mask-image: linear-gradient(to bottom, transparent 0%, #000 9%, #000 80%, transparent 100%);
-  }
-}
+/* ---------- Thin scrollbar for glass windows ---------- */
+.thin-scroll { scrollbar-width: thin; scrollbar-color: rgba(255,255,255,.25) transparent; }
+.thin-scroll::-webkit-scrollbar { width: 6px; }
+.thin-scroll::-webkit-scrollbar-track { background: transparent; }
+.thin-scroll::-webkit-scrollbar-thumb { background: rgba(255,255,255,.22); border-radius: 999px; }
+.thin-scroll::-webkit-scrollbar-thumb:hover { background: rgba(255,255,255,.4); }
